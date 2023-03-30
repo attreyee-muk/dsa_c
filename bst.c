@@ -144,8 +144,7 @@ int main(){
 			scanf("%d", &item);
 			root = insert(root,item);
 			printf("\n root is %d", root->data);
-			printf("\n Inorder traversal of binary tree is : ");
-			inorder(root);
+			
 			break;
 			case 2:
 				  printf("\n Enter the element to be deleted : ");

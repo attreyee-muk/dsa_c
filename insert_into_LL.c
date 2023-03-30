@@ -10,7 +10,7 @@ int i;
 int n;
 static struct Node *head = NULL;
 static struct Node *newnode = NULL;
-static struct Node *temp=NULL , *prevnode= NULL;
+static struct Node *temp= NULL , *prevnode= NULL;
 void insert_beg();
 void insert_last();
 void insert_middle();
@@ -33,31 +33,31 @@ int main()
             create();
             displayfull();
             break;
-            // case 2:
-            // insert_beg();
-            // display();
-            // break;
-            // // case 3:
-            // // insert_last();
-            // // display();
-            // break;
             case 2:
-            insert_middle();
+            insert_beg();
             display();
             break;
             case 3:
-            delete_first();
+            insert_last();
             display();
             break;
             case 4:
-            delete_last();
+            insert_middle();
             display();
             break;
             case 5:
-            delete_middle();
+            delete_first();
             display();
             break;
             case 6:
+            delete_last();
+            display();
+            break;
+            case 7:
+            delete_middle();
+            display();
+            break;
+            case 8:
             break;
             default:
             printf("invalid choice");
@@ -93,6 +93,7 @@ void insert_middle(){
     printf("enter the index after which you want to insert an element");
     scanf("%d",&pos);
     newnode = (struct Node *)malloc(sizeof(struct Node));
+    newnode->next=0;
     if(pos>n){
         printf("invalid");
     }
@@ -108,7 +109,7 @@ void insert_middle(){
     if(i==1){
         insert_beg();
         }
-    else if(i==pos){
+    else if(i==n){
         insert_last();
     }
     else{
